@@ -1,0 +1,257 @@
+<?xml version="1.0"?>
+<!--
+	Title: Electronic Medical Records (EMRs)
+	Filename: patients.xml
+	Version: 1.0
+-->
+<Document xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<title>Electronic Medical Records</title>
+	<versionNumber value="1"/>
+	<recordTarget>
+		<patientInfo>
+			<id>12345</id>
+			<addr>
+				<streetAddressLine>79 rue d'hautpoul.</streetAddressLine>
+				<city>Paris</city>
+				<state>Paris</state>
+				<postalCode>75019</postalCode>
+				<country>France</country>
+			</addr>
+			<phone>2348123456789</phone>
+			<patient>
+				<name>
+					<prefix>Mr.</prefix>
+					<firstName>Habib</firstName>
+					<lastName>Aminu</lastName>
+				</name>
+				<maritalStatus>"Married"</maritalStatus>
+				<dateOfBirth>01-09-1995</dateOfBirth>
+				<age>45</age>
+				<weight>
+					<unit>"kilogram"</unit>
+					<value>75</value>
+				</weight>
+				<height>
+					<unit>"centimeters"</unit>
+					<value>180</value>
+				</height>
+				<guardian>
+					<addr>
+						<streetAddressLine>79 rue d'hautpoul.</streetAddressLine>
+						<city>Paris</city>
+						<state>Paris</state>
+						<postalCode>75019</postalCode>
+						<country>France</country>
+					</addr>
+					<phone>2348123456789</phone>
+					<guardianPerson>
+						<name>
+							<firstName>Bunmi</firstName>
+							<lastName>Aminu</lastName>
+						</name>
+						<relationship>Mother</relationship>
+					</guardianPerson>
+				</guardian>
+			</patient>
+		</patientInfo>
+	</recordTarget>
+	<employeeDetails>
+			<staffID>009</staffID>
+			<name>
+				<firstName>Paul</firstName>
+				<lastName>James</lastName>
+			</name>
+			<addr>
+				<streetAddressLine>APT 203, Chaulle de gaulle.</streetAddressLine>
+				<city>Paris</city>
+				<state>Paris</state>
+				<postalCode>75019</postalCode>
+				<country>France</country>
+			</addr>
+			<phone>2348309723451</phone>
+	</employeeDetails>
+	<physicianDetails>
+		<physicianID>001</physicianID>
+		<name>
+			<title>Dr.</title>
+			<firstName>Chris</firstName>
+			<lastName>Oliver</lastName>
+		</name>
+		<addr>
+			<streetAddressLine>89, rue de Radisson.</streetAddressLine>
+			<city>Paris</city>
+			<state>Paris</state>
+			<postalCode>75019</postalCode>
+			<country>France</country>
+		</addr>
+		<phone>234821365723</phone>
+	</physicianDetails>
+	<component>
+		<structuredBody>
+			<!--
+********************************************************
+Allergies Status, 
+Reactions, 
+Alerts
+********************************************************
+-->
+			<component>
+				<section>
+					<!-- Alerts section template -->
+					<title>Allergies Status, Reactions, Alerts</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Substance</th>
+									<th>Reaction</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Penicillin</td>
+									<td>
+										<content ID="reaction1">Hives</content>
+									</td>
+									<td>Active</td>
+								</tr>
+								<tr>
+									<td>Aspirin</td>
+									<td>
+										<content ID="reaction2">Wheezing</content>
+									</td>
+									<td>Active</td>
+								</tr>
+								<tr>
+									<td>Codeine</td>
+									<td>
+										<content ID="reaction3">Nausea</content>
+									</td>
+									<td>Active</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<!--
+********************************************************
+PRESCRIBED MEDICATIONS
+********************************************************
+-->
+			<component>
+				<section>
+					<title>Medications</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Medication</th>
+									<th>Directions</th>
+									<th>Start Date</th>
+									<th>Status</th>
+									<th>Indications</th>
+									<th>Fill Instructions</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="Med1">Proventil 0.09 MG/ACTUAT inhaParisnt solution</content>
+									</td>
+									<td>2 puffs QID PRN wheezing</td>
+									<td>2011-03-01</td>
+									<td>Active</td>
+									<td>Bronchitis (32398004 SNOMED CT)</td>
+									<td>Generic Substitition Allowed</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<!--
+********************************************************
+IMMUNIZATIONS 
+********************************************************
+-->
+			<component>
+				<section>
+					<!--  ********  Immunizations section template   ******** -->
+					<title>Immunizations</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Vaccine</th>
+									<th>Date</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>
+										<content ID="immun1"/>Influenza virus vaccine, IM</td>
+									<td>Nov 1999</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="immun2"/>Influenza virus vaccine, IM</td>
+									<td>Dec 1998</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="immun3"/>Pneumococcal polysaccharide vaccine, IM</td>
+									<td>Dec 1998</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>
+										<content ID="immun4"/>Tetanus and diphtheria toxoids, IM</td>
+									<td>1997</td>
+									<td>Refused</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+			<!--
+********************************************************
+BILLING INFORMATION
+********************************************************
+-->
+			<component>
+				<section>
+					<!--  ******** Billing Information section template  ******** -->
+					<title>Insurance Providers</title>
+					<text>
+						<table border="1" width="100%">
+							<thead>
+								<tr>
+									<th>Payer name</th>
+									<th>Policy type / Coverage type</th>
+									<th>Policy ID</th>
+									<th>Covered party ID</th>
+									<th>Policy Holder</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Good Health Insurance</td>
+									<td>Extended healthcare / Family</td>
+									<td>Contract Number</td>
+									<td>1138345</td>
+									<td>Patient's Mother</td>
+								</tr>
+							</tbody>
+						</table>
+					</text>
+				</section>
+			</component>
+		</structuredBody>
+	</component>
+</Document>

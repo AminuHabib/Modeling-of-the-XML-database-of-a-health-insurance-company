@@ -1,0 +1,272 @@
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Document">
+    <xs:annotation>
+      <xs:documentation>Title: Electronic Medical Records (EMRs)
+  Filename: patients.xml
+  Version: 1.0</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element type="xs:string" name="title"/>
+        <xs:element name="versionNumber">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:byte" name="value"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="recordTarget">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="patientInfo">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:short" name="id"/>
+                    <xs:element name="addr">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element type="xs:string" name="streetAddressLine"/>
+                          <xs:element type="xs:string" name="city"/>
+                          <xs:element type="xs:string" name="state"/>
+                          <xs:element type="xs:int" name="postalCode"/>
+                          <xs:element type="xs:string" name="country"/>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                    <xs:element type="xs:long" name="phone"/>
+                    <xs:element name="patient">
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="name">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="prefix"/>
+                                <xs:element type="xs:string" name="firstName"/>
+                                <xs:element type="xs:string" name="lastName"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element type="xs:string" name="maritalStatus"/>
+                          <xs:element type="xs:string" name="dateOfBirth"/>
+                          <xs:element type="xs:byte" name="age"/>
+                          <xs:element name="weight">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="unit"/>
+                                <xs:element type="xs:byte" name="value"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="height">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="unit"/>
+                                <xs:element type="xs:short" name="value"/>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                          <xs:element name="guardian">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element name="addr">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element type="xs:string" name="streetAddressLine"/>
+                                      <xs:element type="xs:string" name="city"/>
+                                      <xs:element type="xs:string" name="state"/>
+                                      <xs:element type="xs:int" name="postalCode"/>
+                                      <xs:element type="xs:string" name="country"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                                <xs:element type="xs:long" name="phone"/>
+                                <xs:element name="guardianPerson">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="name">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element type="xs:string" name="firstName"/>
+                                            <xs:element type="xs:string" name="lastName"/>
+                                          </xs:sequence>
+                                        </xs:complexType>
+                                      </xs:element>
+                                      <xs:element type="xs:string" name="relationship"/>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="employeeDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="staffID"/>
+              <xs:element name="name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="firstName"/>
+                    <xs:element type="xs:string" name="lastName"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="addr">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="streetAddressLine"/>
+                    <xs:element type="xs:string" name="city"/>
+                    <xs:element type="xs:string" name="state"/>
+                    <xs:element type="xs:int" name="postalCode"/>
+                    <xs:element type="xs:string" name="country"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:long" name="phone"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="physicianDetails">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element type="xs:byte" name="physicianID"/>
+              <xs:element name="name">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="title"/>
+                    <xs:element type="xs:string" name="firstName"/>
+                    <xs:element type="xs:string" name="lastName"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="addr">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element type="xs:string" name="streetAddressLine"/>
+                    <xs:element type="xs:string" name="city"/>
+                    <xs:element type="xs:string" name="state"/>
+                    <xs:element type="xs:int" name="postalCode"/>
+                    <xs:element type="xs:string" name="country"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element type="xs:long" name="phone"/>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="component">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="structuredBody">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="component" maxOccurs="unbounded" minOccurs="0">
+                      <xs:annotation>
+                        <xs:documentation>********************************************************
+Allergies Status, 
+Reactions, 
+Alerts
+********************************************************
+
+********************************************************
+PRESCRIBED MEDICATIONS
+********************************************************
+
+********************************************************
+IMMUNIZATIONS 
+********************************************************
+
+********************************************************
+BILLING INFORMATION
+********************************************************</xs:documentation>
+                      </xs:annotation>
+                      <xs:complexType>
+                        <xs:sequence>
+                          <xs:element name="section">
+                            <xs:complexType>
+                              <xs:sequence>
+                                <xs:element type="xs:string" name="title">
+                                  <xs:annotation>
+                                    <xs:documentation>Alerts section template   ********  Immunizations section template   ********   ******** Billing Information section template  ********</xs:documentation>
+                                  </xs:annotation>
+                                </xs:element>
+                                <xs:element name="text">
+                                  <xs:complexType>
+                                    <xs:sequence>
+                                      <xs:element name="table">
+                                        <xs:complexType>
+                                          <xs:sequence>
+                                            <xs:element name="thead">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="tr">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element type="xs:string" name="th" maxOccurs="unbounded" minOccurs="0"/>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                            <xs:element name="tbody">
+                                              <xs:complexType>
+                                                <xs:sequence>
+                                                  <xs:element name="tr" maxOccurs="unbounded" minOccurs="0">
+                                                    <xs:complexType>
+                                                      <xs:sequence>
+                                                        <xs:element name="td" maxOccurs="unbounded" minOccurs="0">
+                                                          <xs:complexType mixed="true">
+                                                            <xs:sequence>
+                                                              <xs:element name="content" minOccurs="0">
+                                                                <xs:complexType>
+                                                                  <xs:simpleContent>
+                                                                    <xs:extension base="xs:string">
+                                                                      <xs:attribute type="xs:string" name="ID" use="optional"/>
+                                                                    </xs:extension>
+                                                                  </xs:simpleContent>
+                                                                </xs:complexType>
+                                                              </xs:element>
+                                                            </xs:sequence>
+                                                          </xs:complexType>
+                                                        </xs:element>
+                                                      </xs:sequence>
+                                                    </xs:complexType>
+                                                  </xs:element>
+                                                </xs:sequence>
+                                              </xs:complexType>
+                                            </xs:element>
+                                          </xs:sequence>
+                                          <xs:attribute type="xs:byte" name="border" use="optional"/>
+                                          <xs:attribute type="xs:string" name="width" use="optional"/>
+                                        </xs:complexType>
+                                      </xs:element>
+                                    </xs:sequence>
+                                  </xs:complexType>
+                                </xs:element>
+                              </xs:sequence>
+                            </xs:complexType>
+                          </xs:element>
+                        </xs:sequence>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
